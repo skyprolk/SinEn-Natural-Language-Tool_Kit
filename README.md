@@ -69,3 +69,6 @@ We welcome contributions to the SinEn project. If you would like to contribute, 
 ## License
 
 SinEn is released under the Apache-2.0 license. **See [LICENSE](https://github.com/skyprolk/SinEn-Natural-Language-Tool_Kit/blob/main/LICENSE) for more information.**
+
+## Credits
+_Developed **#KNOiT**_
