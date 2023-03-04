@@ -42,21 +42,26 @@ from sinen_stemmer import SinEnStemmer
 # Import the SinEnTokenizer class from the SinEn_Tokenizer module
 from sinen_tokenizer import SinEnTokenizer
 
-# Create a SinEnStemmer object
+# Create an instance of the SinEnStemmer class
 stemmer = SinEnStemmer()
-# Create a SinEnTokenizer object
+
+# Create an instance of the SinEnTokenizer class for splitting the text
 tokenizer = SinEnTokenizer()
 
 # Tokenize the text using the SinEnTokenizer object
 text = "Mata rupiyal 100k wage mudalak denna puluwanda?"
 text = tokenizer.tokenize(text)
-print(text) # Output : ['mata','rupiyal','mudalak','denna','puluwanda']
 
+# Stem each word in the tokenized text using the SinEnStemmer object
 stemmed_words = []
-# Iterate over each word in the tokenized text
 for word in text:
-  # Stem the word using the SinEnStemmer object
-  word = stemmer.stem(word)[0]
-  # Append the stemmed word
-  stemmed_words.append(word)
-print(stemmed_words) # Output : ['ma','rupiyal','mudala','dena','puluwan']
+    # Call the stem method to reduce the word to its base form
+    stemmed_word = stemmer.stem(word)[0]
+    stemmed_words.append(stemmed_word)
+
+# Print the stemmed words to the console
+print(stemmed_words) # Output : ['ma', 'rupiyal', 'mudala', 'dena', 'puluwan']
+```
+## Contributing
+
+We welcome contributions to the SinEn project. If you would like to contribute, please open a pull request with your changes.
