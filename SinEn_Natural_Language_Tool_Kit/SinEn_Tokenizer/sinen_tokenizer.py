@@ -2,6 +2,7 @@
 import os
 import sys
 import string
+from art import *
 from nltk import word_tokenize
 from string import digits
 
