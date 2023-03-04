@@ -27,5 +27,36 @@ _In addition to these tools, the project also includes supporting tools for coll
 ## Installation
 
 To install SinEn, clone the repository and install the required packages using pip:
->git clone https://github.com/your_username/SinEn.git
->cd SinEn
+> git clone https://github.com/your_username/SinEn.git <br />
+> cd SinEn
+
+
+## Usage
+
+To use the SinEn toolkit, import the necessary modules in your Python code:
+
+```python
+# Import the SinEnStemmer class from the SinEn_Stemmer module
+from sinen_stemmer import SinEnStemmer
+
+# Import the SinEnTokenizer class from the SinEn_Tokenizer module
+from sinen_tokenizer import SinEnTokenizer
+
+# Create a SinEnStemmer object
+stemmer = SinEnStemmer()
+# Create a SinEnTokenizer object
+tokenizer = SinEnTokenizer()
+
+# Tokenize the text using the SinEnTokenizer object
+text = "Mata rupiyal 100k wage mudalak denna puluwanda?"
+text = tokenizer.tokenize(text)
+print(text) # Output : ['mata','rupiyal','mudalak','denna','puluwanda']
+
+stemmed_words = []
+# Iterate over each word in the tokenized text
+for word in text:
+  # Stem the word using the SinEnStemmer object
+  word = stemmer.stem(word)[0]
+  # Append the stemmed word
+  stemmed_words.append(word)
+print(stemmed_words) # Output : ['ma','rupiyal','mudala','dena','puluwan']
