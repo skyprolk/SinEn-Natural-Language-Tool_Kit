@@ -64,8 +64,8 @@ print(stemmed_words) # Output : ['ma', 'rupiyal', 'mudala', 'dena', 'puluwan']
 ```
 ## Contributing
 
-_We welcome contributions to the SinEn project. If you would like to contribute, please open a pull request with your changes.
+We welcome contributions to the SinEn project. If you would like to contribute, please open a pull request with your changes.
 
 ## License
 
-**SinEn** is released under the **_Apache-2.0 license**_. See [LICENSE](https://github.com/skyprolk/SinEn-Natural-Language-Tool_Kit/blob/main/LICENSE) for more information.
+SinEn is released under the Apache-2.0 license. **See [LICENSE](https://github.com/skyprolk/SinEn-Natural-Language-Tool_Kit/blob/main/LICENSE) for more information.**
