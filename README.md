@@ -27,8 +27,9 @@ _In addition to these tools, the project also includes supporting tools for coll
 ## Installation
 
 To install SinEn, clone the repository and install the required packages using pip:
-> git clone https://github.com/your_username/SinEn.git <br />
-> cd SinEn
+> git clone https://github.com/skyprolk/SinEn-Natural-Language-Tool_Kit.git <br />
+> pip install art <br />
+> pip install pygtrie <br />
 
 
 ## Usage
