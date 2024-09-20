@@ -3,6 +3,7 @@ import os
 import sys
 import joblib
 import pickle
+import nltk
 import absl.logging
 import pandas as pd
 import tensorflow as tf
@@ -15,6 +16,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from art import *
+
+# Download the punkt tokenizer for sentence tokenization
+nltk.download('punkt')
 
 # Set logging level to reduce amount of log messages displayed
 absl.logging.set_verbosity(absl.logging.ERROR)
@@ -259,8 +263,11 @@ def predict_model(model, input_texts:list, vectorizer:CountVectorizer, label_enc
 def transfer_model(svc_model:svm.SVC, X_test:list):
     print("### Transferring model into TensorFlow model...")
     
-    # Creating a Sequential Keras model with a single Dense layer with sigmoid activation
-    tf_model = tf.keras.models.Sequential([tf.keras.layers.Dense(1, input_shape=(X_test.shape[1:]), activation='sigmoid')])
+    # Creating a TensorFlow model with a single dense layer and sigmoid activation
+    tf_model = tf.keras.models.Sequential([
+        tf.keras.layers.Input(shape=(X_test.shape[1],)),
+        tf.keras.layers.Dense(1, activation='sigmoid')
+        ])
     
     # Setting the weights and biases of the Keras model using the trained SVM model
     tf_model.layers[0].weights[0].assign(svc_model.coef_.transpose().toarray())
